@@ -1,2 +1,10 @@
-# WHU_Summer_Training_2021
-This is a summer training project of 2019 Software Engineering students.
+# Introduction
+多租户小程序商城系统
+
+本软件是一套支持多租户的开发、支持可视化布局的SaaS商城系统，能为各种线上经营者提供完善的支持和后台管理功能。 
+
+# Platforms
+微信小程序版、H5版、Android版、iOS版、支付宝小程序版、百度小程序版、字节跳动小程序版、QQ小程序版、快应用、360小程序
+
+# Team Members
+赵思阳, 李嘉琦, 刘映华, 牛佳锐, 袁宇涵
