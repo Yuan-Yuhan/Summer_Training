@@ -4,7 +4,7 @@ package com.example.demo.entity;
 import javax.persistence.*;
 
 @Entity //表的实体
-@Table(name="goodItems")  //设置table
+@Table(name="goodsItem")  //设置table
 public class GoodsItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//主键自增策
@@ -12,7 +12,7 @@ public class GoodsItem {
     @Column(columnDefinition = "varchar(255) default ''")
     private String gname;//商品名
     @Column(columnDefinition = "varchar(255) default ''")
-    private double transportfee;//运费
+    private double transportfee=-1;//运费
     @Column(columnDefinition = "varchar(255) default ''")
     private String spic;//展示图
     @Column(columnDefinition = "varchar(255) default ''")
@@ -22,7 +22,7 @@ public class GoodsItem {
     @Column(columnDefinition = "varchar(255) default ''")
     private double favorablerate;//好评率
     @Column(columnDefinition = "varchar(255) default ''")
-    private int shopid;//店铺id
+    private Integer merchantId;//店铺id
     @Column(columnDefinition = "varchar(255) default ''")
     private  String details;//详情
     @Column(columnDefinition = "varchar(255) default ''")
@@ -85,12 +85,12 @@ public class GoodsItem {
         this.favorablerate = favorablerate;
     }
 
-    public int getShopid() {
-        return shopid;
+    public int getMerchantId() {
+        return merchantId;
     }
 
-    public void setShopid(int shopid) {
-        this.shopid = shopid;
+    public void setMerchantId(int merchantId) {
+        this.merchantId = merchantId;
     }
 
     public String getDetails() {

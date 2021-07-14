@@ -21,7 +21,7 @@ public class GoodsItemController {
      * @param goodsItem
      * @return
      */
-    @RequestMapping("/addGoodsItem")
+    @RequestMapping("/addOne")
     public Result addGoodsItem(GoodsItem goodsItem){
         return goodsItemService.addOne(goodsItem);
     }
@@ -32,16 +32,8 @@ public class GoodsItemController {
      * @return
      */
     @RequestMapping("/findAllByGnameLike")
-    public Result findAllByGoods_nameLike(String name){
-        return goodsItemService.findAllByGnameLike(name);
+    public Result search(String name){
+        return goodsItemService.findAllByGnameLike((name));
     }
-//
-//    @RequestMapping("findFirst6BySid")
-//    public Result findFirst6(int sid)
-//    {
-//        System.out.println("Yep!We did it!");
-//        return goodsItemService.findFirst6ByOrderBySidAsc(sid);
-//
-//    }
 
 }

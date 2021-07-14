@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
+import com.example.demo.enm.MsgId;
 import com.example.demo.entity.Result;
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.servce.UserService;
+import com.example.demo.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +18,7 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String hello(@RequestParam(defaultValue = "李斯", required = false,value = "xingming") String nikename)
-    {
+    public String hello(@RequestParam(defaultValue = "李斯", required = false,value = "xingming") String nikename){
 
         return nikename;
     }
@@ -30,8 +31,7 @@ public class UserController {
      * @return
      */
     @RequestMapping ("/login")
-    public Result login(String phone, String password)
-    {
+    public Result login(String phone, String password){
         return userService.login(phone,password);
     }
 
@@ -63,6 +63,17 @@ public class UserController {
     public Result delete(int uid){
         return userService.delete(uid);
     }
+    /**
+     * 更新用户头像
+     * @param uid，avatar
+     * @return
+     */
+    @RequestMapping("/avatar")
+    public Result updateAvatar(int uid,String avatar){
+        return userService.updateAvatar(uid,avatar);
+    }
+
+
 
 
 

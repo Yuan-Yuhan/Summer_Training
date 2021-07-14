@@ -17,7 +17,7 @@ public class GoodsController {
      * @param goods
      * @return
      */
-    @RequestMapping("/addGoods")
+    @RequestMapping("/addOne")
     public Result addGoods(Goods goods){
         return goodsService.addOne(goods);
     }

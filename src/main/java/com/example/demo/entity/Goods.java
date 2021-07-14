@@ -17,7 +17,7 @@ public class Goods {
     @Column(columnDefinition = "varchar(255) default ''")
     private double price;//原价
     @Column(columnDefinition = "varchar(255) default ''")
-    private double discount;//折扣
+    private double discount=1;//折扣
     @Column(columnDefinition = "varchar(255) default ''")
     private int inventory;//库存量
 

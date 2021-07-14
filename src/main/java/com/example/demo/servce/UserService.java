@@ -1,14 +1,15 @@
 package com.example.demo.servce;
 
-import com.example.demo.Demo1Application;
+
 import com.example.demo.enm.MsgId;
 import com.example.demo.entity.Result;
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.stereotype.Service;
 import com.example.demo.utils.ResultUtils;
+
+
 @Service
 public class UserService {
     @Autowired
@@ -55,26 +56,40 @@ public class UserService {
     }
 
     /**
-     *用户更新
+     *用户信息更新
      */
+
     public Result update(User user){
         if(user.getUid()==null){
-            return ResultUtils.error(MsgId.NO_ID);
+           return ResultUtils.error(MsgId.NO_ID);
         }
         userRepository.save(user);
-        return ResultUtils.success();
+        return ResultUtils.success(user);
 
     }
     /**
      * 删除用户
      */
+
     public Result delete(int uid){
         User user=userRepository.findByUid(uid);
         if(user==null){
             return ResultUtils.error(MsgId.USER_NOT_EXIST);
         }
         userRepository.delete(user);
-        return ResultUtils.success(userRepository.findAll());
+        return ResultUtils.success();
 
+    }
+    /**
+     * 更换用户头像
+     */
+    public Result updateAvatar(int uid,String avatar){
+        User user=userRepository.findByUid(uid);
+        if(user==null){
+            return ResultUtils.error(MsgId.USER_NOT_EXIST);
+        }
+        user.setAvatar(avatar);
+        userRepository.save(user);
+        return ResultUtils.success();
     }
 }

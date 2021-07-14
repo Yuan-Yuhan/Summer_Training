@@ -14,9 +14,6 @@ public class User {
     private Integer uid;//用户ID
 
     @Column(columnDefinition = "varchar(255) default ''")
-    private String opendcode;//登录账户
-
-    @Column(columnDefinition = "varchar(255) default ''")
     private String password;//用户密码
 
     @Column(columnDefinition = "varchar(255) default ''")
@@ -35,6 +32,8 @@ public class User {
     @Column(columnDefinition = "varchar(255) default ''")
     private String phone;//联系电话
 
+    @Column(columnDefinition = "varchar(255) default ''")
+    private String place;//所在地
 
     @CreationTimestamp
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
@@ -61,14 +60,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getOpendcode() {
-        return opendcode;
-    }
-
-    public void setOpendcode(String opendcode) {
-        this.opendcode = opendcode;
     }
 
     public String getAvatar() {
@@ -111,6 +102,14 @@ public class User {
         this.phone = phone;
     }
 
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
     public Date getUpdated() {
         return updated;
     }
@@ -139,12 +138,12 @@ public class User {
     public String toString() {
         return "User{" +
                 "uid=" + uid +
-                ", opendcode='" + opendcode + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", nikename='" + nikename + '\'' +
                 ", gender='" + gender + '\'' +
                 ", birthday='" + birthday + '\'' +
                 ", phone='" + phone + '\'' +
+                ", place='" + place + '\'' +
                 ", updated=" + updated +
                 ", created=" + created +
                 ", deleted=" + deleted +

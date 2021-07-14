@@ -17,13 +17,15 @@ public class GoodsService {
     /**
      *设置商品规格
      */
-    //必传商品id、规格、规格图、价格、库存
+    //必传sid、gpic、specification、price、discount、inventory
     public Result addOne(Goods goods){
         if(goods.getSid()==null){
             return ResultUtils.error(MsgId.NO_ID);
+        }else if(goods.getGpic()==null||goods.getSpecification()==null||goods.getPrice()<0||goods.getDiscount()<0||goods.getInventory()<0){
+            return ResultUtils.error(MsgId.GOODS_NOT_DETAILED);
         }
         goodsRepository.save(goods);
-        return ResultUtils.success();
+        return ResultUtils.success(goods);
     }
     /**
      *更新商品规格
@@ -39,8 +41,7 @@ public class GoodsService {
     /**
      *查找一个商品的所有规格
      */
-    public Result findAllBySid(int sid)
-    {
+    public Result findAllBySid(int sid){
         return ResultUtils.success(goodsRepository.findAllBySid(sid));
     }
     /**
