@@ -33,7 +33,15 @@ public class GoodsItemController {
      */
     @RequestMapping("/findAllByGnameLike")
     public Result findAllByGoods_nameLike(String name){
-        return goodsItemService.findAllByGnameLike((name));
+        return goodsItemService.findAllByGnameLike(name);
     }
+//
+//    @RequestMapping("findFirst6BySid")
+//    public Result findFirst6(int sid)
+//    {
+//        System.out.println("Yep!We did it!");
+//        return goodsItemService.findFirst6ByOrderBySidAsc(sid);
+//
+//    }
 
 }

@@ -23,7 +23,7 @@ public class UserService {
         if (userExistPhone != null) {
             String userExistPassword = userExistPhone.getPassword();
             if (userExistPassword.equals(password)) {
-                return  ResultUtils.success();
+                return  ResultUtils.success(userExistPhone);
             } else {
                 return ResultUtils.error(MsgId.USER_ERR_PASS);
             }
@@ -59,7 +59,7 @@ public class UserService {
      */
     public Result update(User user){
         if(user.getUid()==null){
-            ResultUtils.error(MsgId.NO_ID);
+            return ResultUtils.error(MsgId.NO_ID);
         }
         userRepository.save(user);
         return ResultUtils.success();

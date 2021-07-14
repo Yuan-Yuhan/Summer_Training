@@ -16,7 +16,8 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String hello(@RequestParam(defaultValue = "李斯", required = false,value = "xingming") String nikename){
+    public String hello(@RequestParam(defaultValue = "李斯", required = false,value = "xingming") String nikename)
+    {
 
         return nikename;
     }
@@ -29,7 +30,8 @@ public class UserController {
      * @return
      */
     @RequestMapping ("/login")
-    public Result login(String phone, String password){
+    public Result login(String phone, String password)
+    {
         return userService.login(phone,password);
     }
 
@@ -58,7 +60,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("/delete" )
-    public Result delet(int uid){
+    public Result delete(int uid){
         return userService.delete(uid);
     }
 

@@ -54,5 +54,9 @@ public class GoodsItemService {
         return ResultUtils.success(goodsItemRepository.findAllByGnameLike("%"+name+"%"));
     }
 
+//    public Result findFirst6ByOrderBySidAsc(int sid)
+//    {
+//        return ResultUtils.success(goodsItemRepository.findFirst6ByOrderBySidAsc(sid));
+//    }
 
 }

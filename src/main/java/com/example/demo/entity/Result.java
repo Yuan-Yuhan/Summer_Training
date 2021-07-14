@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @Version 1.0
  */
 public class Result<T> implements Serializable {
-    private  Integer code;//正确码、错误码
+    private Integer code;//正确码、错误码
     private String msg;//正确信息、错误信息
     private T date;//数据
 

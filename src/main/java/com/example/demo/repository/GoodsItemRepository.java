@@ -11,5 +11,7 @@ public interface GoodsItemRepository extends JpaRepository<GoodsItem,Integer> {
       //通过商品id查找一个商品
       GoodsItem findBySid(int sid);
 
+//      //查找六个商品
+//      List<GoodsItem> findFirst6ByOrderBySidAsc(int sid);
 
 }

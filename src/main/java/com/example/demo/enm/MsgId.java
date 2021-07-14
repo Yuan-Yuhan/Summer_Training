@@ -6,11 +6,15 @@ package com.example.demo.enm;
  * @Version 1.0
  */
 public enum MsgId {
+
+    NO_ID(5,"缺少Id参数！"),
+
+
     USER_ERR_PASS(1,"密码错误！"),
     USER_NOT_EXIST(2,"用户不存在！"),
     PHONE_ALREADY_EXIST(3,"注册失败，该电话号码已注册！"),
     USER_ALREADY_EXIST(4,"注册失败，该用户名已存在！"),
-    NO_ID(5,"缺少Id参数！"),
+
     GOODS_NOT_EXIST(6,"该商品不存在或者已下架！"),
 
 
@@ -24,6 +28,11 @@ public enum MsgId {
 
     TOO_Expensive(10,"商品太贵了没钱就别买了！"),
     LACK_SHANGJIA_ID(11,"请输入查询商家id！"),
+
+    ORDER_Lack_Paraments(101,"缺少一项或几项参数: 用户ID,商品ID,规格ID,商户ID,商品数量"),
+
+    COUPON_Lack_Paraments(111,"优惠券缺少必要参数"),
+    COUPON_Lack_ID(112,"缺少优惠券ID" ),
     ;
     private Integer code;
     private String msg;

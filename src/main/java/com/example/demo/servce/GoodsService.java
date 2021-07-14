@@ -39,7 +39,8 @@ public class GoodsService {
     /**
      *查找一个商品的所有规格
      */
-    public Result findAllBySid(int sid){
+    public Result findAllBySid(int sid)
+    {
         return ResultUtils.success(goodsRepository.findAllBySid(sid));
     }
     /**

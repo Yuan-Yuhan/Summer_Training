@@ -4,7 +4,7 @@ package com.example.demo.entity;
 import javax.persistence.*;
 
 @Entity //表的实体
-@Table(name="商品")  //设置table
+@Table(name="goodItems")  //设置table
 public class GoodsItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//主键自增策
