@@ -10,19 +10,19 @@ import com.example.demo.entity.Result;
  */
 public class ResultUtils {
     //带code和参数的成功
-    public static Result success(MsgId err, Object date){
+    public static Result success(MsgId err, Object data){
         Result result = new Result();
         result.setCode(err.getCode());
         result.setMsg(err.getMsg());
-        result.setDate(date);
+        result.setData(data);
         return result;
     }
     //带参数成功
-    public static Result success(Object date){
+    public static Result success(Object data){
         Result result = new Result();
         result.setCode(0);
         result.setMsg("成功！！");
-        result.setDate(date);
+        result.setData(data);
         return result;
     }
     //不带参数成功

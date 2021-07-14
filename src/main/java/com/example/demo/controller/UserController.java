@@ -1,15 +1,16 @@
 package com.example.demo.controller;
 
-import com.example.demo.enm.MsgId;
 import com.example.demo.entity.Result;
 import com.example.demo.entity.User;
-import com.example.demo.repository.UserRepository;
-import com.example.demo.servce.UserService;
-import com.example.demo.utils.ResultUtils;
+import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
+/**
+ * @author 赵思阳
+ * @since 2021/7/13
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {

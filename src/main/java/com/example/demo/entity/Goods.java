@@ -2,6 +2,11 @@ package com.example.demo.entity;
 
 import javax.persistence.*;
 
+/**
+ * @author 赵思阳
+ * @since 2021/7/12
+ * @version 1.0
+ */
 @Entity //表的实体
 @Table(name="goods")  //设置table
 public class Goods {
@@ -15,11 +20,23 @@ public class Goods {
     @Column(columnDefinition = "varchar(255) default ''")
     private String specification;//规格描述
     @Column(columnDefinition = "varchar(255) default ''")
-    private double price;//原价
+    private double originalPrice;//原价
     @Column(columnDefinition = "varchar(255) default ''")
     private double discount=1;//折扣
     @Column(columnDefinition = "varchar(255) default ''")
     private int inventory;//库存量
+
+    private Double price;
+
+    public Double getPrice()
+    {
+        return price;
+    }
+
+    public void setPrice(Double price)
+    {
+        this.price = price;
+    }
 
     public Integer getGid() {
         return gid;
@@ -53,12 +70,12 @@ public class Goods {
         this.specification = specification;
     }
 
-    public double getPrice() {
-        return price;
+    public double getOriginalPrice() {
+        return originalPrice;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setOriginalPrice(double price) {
+        this.originalPrice = price;
     }
 
     public double getDiscount() {

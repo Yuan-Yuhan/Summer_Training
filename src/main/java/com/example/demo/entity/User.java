@@ -5,7 +5,13 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
+/**
+ * @author 赵思阳
+ * @since 2021/7/12
+ * @version 1.0
+ */
 @Entity //表的实体
 @Table(name="yonghu")  //设置table
 public class User {
@@ -34,6 +40,7 @@ public class User {
 
     @Column(columnDefinition = "varchar(255) default ''")
     private String place;//所在地
+
 
     @CreationTimestamp
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")

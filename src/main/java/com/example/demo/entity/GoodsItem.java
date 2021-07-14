@@ -2,7 +2,11 @@ package com.example.demo.entity;
 
 
 import javax.persistence.*;
-
+/**
+ * @author 赵思阳
+ * @since 2021/7/12
+ * @version 1.0
+ */
 @Entity //表的实体
 @Table(name="goodsItem")  //设置table
 public class GoodsItem {

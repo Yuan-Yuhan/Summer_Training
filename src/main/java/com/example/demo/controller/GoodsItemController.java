@@ -2,13 +2,15 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.GoodsItem;
 import com.example.demo.entity.Result;
-import com.example.demo.servce.GoodsItemService;
+import com.example.demo.service.GoodsItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-
+/**
+ * @author 赵思阳
+ * @since 2021/7/13
+ * @version 1.0
+ */
 @RestController
 @RequestMapping ("/goodsItem")
 public class GoodsItemController {

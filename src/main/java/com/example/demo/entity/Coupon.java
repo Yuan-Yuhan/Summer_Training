@@ -4,9 +4,9 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @Author 袁宇涵
- * @Date 2021/7/13 15:17
- * @Version 1.0
+ * @author 袁宇涵
+ * @since 2021/7/14
+ * @version 1.0
  */
 @Entity //表的实体
 @Table(name="Coupon")  //优惠券
@@ -18,9 +18,9 @@ public class Coupon
 
     private String couponIntro;//优惠券描述
 
-    private Integer usableMoney;//可用金额起点
+    private Double usableMoney;//可用金额起点
 
-    private Integer couponMoney;//优惠金额
+    private Double couponMoney;//优惠金额
 
     private Integer usableStart;//使用日期起始
 
@@ -48,22 +48,22 @@ public class Coupon
         this.couponIntro = couponIntro;
     }
 
-    public Integer getUsableMoney()
+    public Double getUsableMoney()
     {
         return usableMoney;
     }
 
-    public void setUsableMoney(Integer usableMoney)
+    public void setUsableMoney(Double usableMoney)
     {
         this.usableMoney = usableMoney;
     }
 
-    public Integer getCouponMoney()
+    public Double getCouponMoney()
     {
         return couponMoney;
     }
 
-    public void setCouponMoney(Integer couponMoney)
+    public void setCouponMoney(Double couponMoney)
     {
         this.couponMoney = couponMoney;
     }

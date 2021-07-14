@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class Result<T> implements Serializable {
     private  Integer code;//正确码、错误码
     private String msg;//正确信息、错误信息
-    private T date;//数据
+    private T data;//数据
 
     public Integer getCode() {
         return code;
@@ -28,11 +28,11 @@ public class Result<T> implements Serializable {
         this.msg = msg;
     }
 
-    public T getDate() {
-        return date;
+    public T getData() {
+        return data;
     }
 
-    public void setDate(T date) {
-        this.date = date;
+    public void setData(T data) {
+        this.data = data;
     }
 }

@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.DeliveryAddress;
 import com.example.demo.entity.Result;
-import com.example.demo.servce.DeliveryAddressService;
+import com.example.demo.service.DeliveryAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

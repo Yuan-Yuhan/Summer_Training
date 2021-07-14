@@ -2,15 +2,15 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Merchant;
 import com.example.demo.entity.Result;
-import com.example.demo.servce.MerchantService;
+import com.example.demo.service.MerchantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Author 赵思阳
- * @Date 2021/7/13 16:42
- * @Version 1.0
+ * @author 赵思阳
+ * @since 2021/7/13
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/merchant")

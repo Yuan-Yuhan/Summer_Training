@@ -7,17 +7,19 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @Author 袁宇涵
- * @Date 2021/7/13 15:17
- * @Version 1.0
+ * @author 袁宇涵
+ * @since 2021/7/14
+ * @version 1.0
  */
-@Entity //表的实体
-@Table(name="Order")  //订单
+
+@Entity
+@Table(name="Dingdan")
+
 public class Order
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//主键自增策略
-    private Integer orderId;//订单ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer orderId;
 
     private Integer uid; //用户ID
 
@@ -35,9 +37,25 @@ public class Order
 
     private Integer couponId;//优惠券ID
 
+    private Date orderDate; //订单时间
+
     private Integer commentRate; //打分1~5
 
     private String commentContent;//评论内容
+
+    private Date commentDate; //评论时间
+
+    private Double totalPrice;
+
+    public Double getTotalPrice()
+    {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice)
+    {
+        this.totalPrice = totalPrice;
+    }
 
     @CreationTimestamp
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
@@ -162,5 +180,25 @@ public class Order
     public void setUpdated(Date updated)
     {
         this.updated = updated;
+    }
+
+    public Date getOrderDate()
+    {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate)
+    {
+        this.orderDate = orderDate;
+    }
+
+    public Date getCommentDate()
+    {
+        return commentDate;
+    }
+
+    public void setCommentDate(Date commentDate)
+    {
+        this.commentDate = commentDate;
     }
 }

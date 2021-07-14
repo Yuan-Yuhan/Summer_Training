@@ -1,9 +1,9 @@
 package com.example.demo.enm;
 
 /**
- * @Author 赵思阳
- * @Date 2021/7/13 9:38
- * @Version 1.0
+ * @author 赵思阳,袁宇涵
+ * @since 2021/7/13
+ * @version 1.x
  */
 public enum MsgId {
     USER_ERR_PASS(1,"密码错误！"),
@@ -25,7 +25,27 @@ public enum MsgId {
 
     TOO_Expensive(10,"商品太贵了没钱就别买了！"),
     LACK_SHANGJIA_ID(11,"请输入查询商家id！"),
+
+
+    //----------------------袁宇涵的code区
+    ORDER_Lack_Paraments(101,"缺少一项或几项参数: 用户ID,商品ID,规格ID,商户ID,商品数量"),
+    ORDER_Lack_OrderId(102,"你输入的OrderId在数据库中不存在"),
+    ORDER_Lack_Status(103,"没有订单状态,无法更新"),
+    ORDER_Lack_CommentFigures(104,"评论参数缺失"),
+
+    COUPON_Lack_Paraments(111,"优惠券缺少必要参数"),
+    COUPON_False_ID(112,"缺少或错误的优惠券ID,请重新检查" ),
+
+    UC_Lack_UID(121,"你没给我传用户的uid"),
+    UC_Lack_CouponID(122,"你没给我传优惠券的couponId"),
+    UC_False_UID(123,"你传了一个错误的UID"),
+    UC_False_MerchantID(124,"你要么没传商户ID,要么是错的"),
+    UC_Too_Cheap(125,"这么便宜的商品还要用优惠券?想屁吃!"),
     ;
+
+
+    //---------------------袁宇涵的code区截止
+
     private Integer code;
     private String msg;
 
