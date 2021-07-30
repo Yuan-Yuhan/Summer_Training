@@ -13,6 +13,7 @@ public interface MerchantRepository extends JpaRepository<Merchant,Integer> {
     Merchant findMerchantByMerchantPhone(String phone);
     Merchant findMerchantByMerchantName(String name);
     Merchant findMerchantByMerchantId(Integer id);
+    String findMerchantPicByMerchantId(Integer merchantId);
 
 
 }

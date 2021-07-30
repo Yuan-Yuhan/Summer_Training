@@ -13,4 +13,6 @@ import java.util.List;
 public interface CouponRepository extends JpaRepository<Coupon,Integer>
 {
     Coupon findCouponByCouponId(int couponId);
+
+    List<Coupon> findAllByMerchantId(Integer merchantId);
 }

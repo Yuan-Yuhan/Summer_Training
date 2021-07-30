@@ -8,6 +8,8 @@ import com.example.demo.entity.Result;
  * @Date 2021/7/13 9:37
  * @Version 1.0
  */
+
+//返回结果的工具类
 public class ResultUtils {
     //带code和参数的成功
     public static Result success(MsgId err, Object data){

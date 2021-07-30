@@ -8,6 +8,7 @@ import javax.persistence.*;
  * @version 1.0
  */
 
+//用户-优惠券 关系数据
 @Entity
 @Table(name="UserCoupon")
 
@@ -15,15 +16,15 @@ public class UserCoupon
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ucId;
+    private Integer ucId; //用户-优惠券 关系ID
 
-    private Integer uid;
+    private Integer uid; //用户ID
 
-    private Integer couponId;
+    private Integer couponId;//优惠券ID
 
-    private Integer merchantId;
+    private Integer merchantId;//商家ID
 
-    private Double usableMoney;
+    private Double usableMoney;//起用金额
 
     public Double getUsableMoney()
     {

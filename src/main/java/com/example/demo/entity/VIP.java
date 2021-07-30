@@ -7,23 +7,27 @@ import javax.persistence.*;
  * @Date 2021/7/14 10:17
  * @Version 1.0
  */
+
+//会员
 @Entity
 @Table(name="vip")
 public class VIP {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//主键自增策略
-    private Integer vId;//会员id
+    private Integer vipId;//会员id
+
+
     private Integer merchantId;//商户id
     private Integer uid;//用户id
-    private Integer VipLevel;//等级
-    private double VipDiscount;//会员折扣
+    private Integer VipLevel = 1;//等级
+    private Double VipDiscount = 1.0;//会员折扣
 
-    public Integer getvId() {
-        return vId;
+    public Integer getvVid() {
+        return vipId;
     }
 
-    public void setvId(Integer vId) {
-        this.vId = vId;
+    public void setvVid(Integer vId) {
+        this.vipId = vId;
     }
 
     public Integer getMerchantId() {
@@ -50,11 +54,11 @@ public class VIP {
         VipLevel = vipLevel;
     }
 
-    public double getVipDiscount() {
+    public Double getVipDiscount() {
         return VipDiscount;
     }
 
-    public void setVipDiscount(double vipDiscount) {
+    public void setVipDiscount(Double vipDiscount) {
         VipDiscount = vipDiscount;
     }
 }

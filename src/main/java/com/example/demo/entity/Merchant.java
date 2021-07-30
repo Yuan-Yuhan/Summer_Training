@@ -7,6 +7,8 @@ import javax.persistence.*;
  * @Date 2021/7/13 16:26
  * @Version 1.0
  */
+
+//商家
 @Entity
 @Table(name="merchant")
 public class Merchant {

@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -8,6 +10,8 @@ import java.util.Date;
  * @since 2021/7/14
  * @version 1.0
  */
+
+//优惠券
 @Entity //表的实体
 @Table(name="Coupon")  //优惠券
 public class Coupon
@@ -22,9 +26,11 @@ public class Coupon
 
     private Double couponMoney;//优惠金额
 
-    private Integer usableStart;//使用日期起始
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date usableStart;//使用日期起始
 
-    private Integer usableEnd;//使用日期结束
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date usableEnd;//使用日期结束
 
     private Integer merchantId;//商户ID
 
@@ -68,22 +74,22 @@ public class Coupon
         this.couponMoney = couponMoney;
     }
 
-    public Integer getUsableStart()
+    public Date getUsableStart()
     {
         return usableStart;
     }
 
-    public void setUsableStart(Integer usableStart)
+    public void setUsableStart(Date usableStart)
     {
         this.usableStart = usableStart;
     }
 
-    public Integer getUsableEnd()
+    public Date getUsableEnd()
     {
         return usableEnd;
     }
 
-    public void setUsableEnd(Integer usableEnd)
+    public void setUsableEnd(Date usableEnd)
     {
         this.usableEnd = usableEnd;
     }

@@ -7,6 +7,8 @@ import java.io.Serializable;
  * @Date 2021/7/13 9:33
  * @Version 1.0
  */
+
+//调用后台方法后显示的结果
 public class Result<T> implements Serializable {
     private  Integer code;//正确码、错误码
     private String msg;//正确信息、错误信息

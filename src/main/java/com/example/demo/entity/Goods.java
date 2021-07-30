@@ -1,12 +1,12 @@
 package com.example.demo.entity;
 
 import javax.persistence.*;
-
 /**
  * @author 赵思阳
- * @since 2021/7/12
+ * @since 2021-07-23
  * @version 1.0
  */
+//商品规格
 @Entity //表的实体
 @Table(name="goods")  //设置table
 public class Goods {
@@ -14,29 +14,18 @@ public class Goods {
     @GeneratedValue(strategy = GenerationType.IDENTITY)//主键自增策略
     private Integer gid;//规格ID
     @Column(columnDefinition = "varchar(255) default ''")
-    private String sid;//商品id
+    private Integer sid;//商品id
     @Column(columnDefinition = "varchar(255) default ''")
     private String gpic;//规格图
     @Column(columnDefinition = "varchar(255) default ''")
     private String specification;//规格描述
     @Column(columnDefinition = "varchar(255) default ''")
-    private double originalPrice;//原价
+    private Double originalPrice;//原价
     @Column(columnDefinition = "varchar(255) default ''")
-    private double discount=1;//折扣
+    private Double discount=1.0;//折扣
+    private Double price;//现价
     @Column(columnDefinition = "varchar(255) default ''")
-    private int inventory;//库存量
-
-    private Double price;
-
-    public Double getPrice()
-    {
-        return price;
-    }
-
-    public void setPrice(Double price)
-    {
-        this.price = price;
-    }
+    private Integer inventory;//库存量
 
     public Integer getGid() {
         return gid;
@@ -46,11 +35,11 @@ public class Goods {
         this.gid = gid;
     }
 
-    public String getSid() {
+    public Integer getSid() {
         return sid;
     }
 
-    public void setSid(String sid) {
+    public void setSid(Integer sid) {
         this.sid = sid;
     }
 
@@ -70,27 +59,35 @@ public class Goods {
         this.specification = specification;
     }
 
-    public double getOriginalPrice() {
+    public Double getOriginalPrice() {
         return originalPrice;
     }
 
-    public void setOriginalPrice(double price) {
-        this.originalPrice = price;
+    public void setOriginalPrice(Double originalPrice) {
+        this.originalPrice = originalPrice;
     }
 
-    public double getDiscount() {
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(double discount) {
+    public void setDiscount(Double discount) {
         this.discount = discount;
     }
 
-    public int getInventory() {
+    public Integer getInventory() {
         return inventory;
     }
 
-    public void setInventory(int inventory) {
+    public void setInventory(Integer inventory) {
         this.inventory = inventory;
     }
 }

@@ -17,13 +17,18 @@ import java.util.List;
  * @since 2021/7/14
  * @version 1.0
  */
+
+//用户和优惠券的对应关系
 @Service
 public class UserCouponService
 {
     @Autowired
     UserCouponRepository ucRepository;
+    @Autowired
     UserRepository userRepository;
+    @Autowired
     CouponRepository couponRepository;
+    @Autowired
     MerchantRepository merchantRepository;
 
     //用户领取优惠券
@@ -48,7 +53,7 @@ public class UserCouponService
         uc.setUsableMoney(coupon.getUsableMoney());
 
         ucRepository.save(uc);
-        return ResultUtils.success();
+        return ResultUtils.success(uc);
     }
 
     //获取用户所有的优惠券(还没判断时间)

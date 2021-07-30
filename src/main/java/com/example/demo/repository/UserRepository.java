@@ -3,8 +3,8 @@ package com.example.demo.repository;
 import com.example.demo.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 /**
- * @author 赵思阳
- * @since 2021/7/12
+ * @author 袁宇涵
+ * @since 2021-07-23
  * @version 1.0
  */
 public interface UserRepository  extends JpaRepository<User, Integer> {
@@ -19,6 +19,7 @@ public interface UserRepository  extends JpaRepository<User, Integer> {
     String findPasswordByPhone(String phone);
     //通过id查找用户头像
     String findAvatarByUid(Integer uid);
+
 
 
 }

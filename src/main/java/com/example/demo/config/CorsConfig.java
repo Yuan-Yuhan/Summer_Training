@@ -1,16 +1,16 @@
 package com.example.demo.config;
 
+/**
+ * @author 赵思阳
+ * @since 2021-07-23
+ * @version 1.0
+ */
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-/**
- * @author 赵思阳
- * @since 2021/7/12
- * @version 1.0
- */
 @Configuration
 public class CorsConfig {
     private CorsConfiguration buildConfig() {

@@ -2,16 +2,17 @@ package com.example.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
-
 /**
  * @author 赵思阳
- * @since 2021/7/12
+ * @since 2021-07-23
  * @version 1.0
  */
+
+//用户
 @Entity //表的实体
 @Table(name="yonghu")  //设置table
 public class User {
@@ -41,8 +42,7 @@ public class User {
     @Column(columnDefinition = "varchar(255) default ''")
     private String place;//所在地
 
-
-    @CreationTimestamp
+    @UpdateTimestamp
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date updated;//更新时间
 

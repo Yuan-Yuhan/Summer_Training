@@ -11,6 +11,7 @@ import java.util.Date;
  * @since 2021/7/14
  * @version 1.0
  */
+//订单
 
 @Entity
 @Table(name="Dingdan")
@@ -37,6 +38,8 @@ public class Order
 
     private Integer couponId;//优惠券ID
 
+    @CreationTimestamp
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date orderDate; //订单时间
 
     private Integer commentRate; //打分1~5
@@ -45,7 +48,7 @@ public class Order
 
     private Date commentDate; //评论时间
 
-    private Double totalPrice;
+    private Double totalPrice;//总价
 
     public Double getTotalPrice()
     {
@@ -57,9 +60,7 @@ public class Order
         this.totalPrice = totalPrice;
     }
 
-    @CreationTimestamp
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date updated;//更新时间
+
 
 
     public Integer getOrderId()
@@ -172,15 +173,7 @@ public class Order
         this.commentContent = commentContent;
     }
 
-    public Date getUpdated()
-    {
-        return updated;
-    }
 
-    public void setUpdated(Date updated)
-    {
-        this.updated = updated;
-    }
 
     public Date getOrderDate()
     {

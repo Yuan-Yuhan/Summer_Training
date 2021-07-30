@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
  * @since 2021-7-14
  * @version 1.0
  */
+
+//优惠券相关服务
 @Service
 public class CouponService
 {
@@ -22,8 +24,6 @@ public class CouponService
 
     /**
      * 必要参数: 优惠券介绍,优惠金额,满xx元才优惠,商户ID,起始日期,截止日期
-     * @param coupon
-     * @return
      */
     public Result addCoupon(Coupon coupon)
     {
@@ -35,7 +35,7 @@ public class CouponService
             return ResultUtils.error(MsgId.COUPON_Lack_Paraments);
         }
         couponRepository.save(coupon);
-        return ResultUtils.success(coupon);
+        return ResultUtils.success();
     }
 
     //必要参数: 优惠券ID,优惠券介绍,优惠金额,满xx元才优惠,商户ID,起始日期,截止日期

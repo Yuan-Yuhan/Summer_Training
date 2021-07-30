@@ -7,13 +7,14 @@ import com.example.demo.repository.MerchantRepository;
 import com.example.demo.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 /**
- * @Author 赵思阳
- * @Date 2021/7/13 16:33
- * @Version 1.0
+ * @author 赵思阳
+ * @since 2021-07-23
+ * @version 1.0
  */
+
+//商家类
+
 @Service
 public class MerchantService {
     @Autowired
@@ -58,12 +59,16 @@ public class MerchantService {
     }
     /**
      *商户信息更新
+     * 必传merchantId，merchantPlace，merchantPassword
      */
 
-    public Result update(Merchant merchant){
-        if(merchant.getMerchantId()==null){
+    public Result update(Integer merchantId,String merchantPlace,String merchantPassword){
+        if(merchantId==null){
             ResultUtils.error(MsgId.NO_ID);
         }
+        Merchant merchant=merchantRepository.findMerchantByMerchantId(merchantId);
+        merchant.setMerchantPlace(merchantPlace);
+        merchant.setMerchantPassword(merchantPassword);
         merchantRepository.save(merchant);
         return ResultUtils.success(merchant);
 
@@ -72,7 +77,7 @@ public class MerchantService {
      * 删除商户
      */
 
-    public Result delete(int merchantId){
+    public Result delete(Integer merchantId){
         Merchant merchant=merchantRepository.findMerchantByMerchantId(merchantId);
         if(merchant==null){
             return ResultUtils.error(MsgId.USER_NOT_EXIST);

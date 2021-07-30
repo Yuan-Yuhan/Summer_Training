@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021/7/14
  * @version 1.0
  */
+//用户和优惠券的对应关系
 @RestController
 @RequestMapping("/usercoupon")
 public class UserCouponController
@@ -19,14 +20,14 @@ public class UserCouponController
     @Autowired
     UserCouponService ucService;
 
-    //优惠从商家那里获取优惠券
+    //用户从商家那里获取优惠券
     @RequestMapping("/fetchCoupon")
     public Result fetchCoupon(Integer uid, Integer couponId, Integer merchantId)
     {
         return ucService.fetchCoupon(uid, couponId, merchantId);
     }
 
-    //个人中心的用户的所有的优惠券
+    //用户在个人中心查找所有的优惠券
     @RequestMapping("/findCouponByUID")
     public Result findCouponByUID(Integer uid)
     {
@@ -34,7 +35,7 @@ public class UserCouponController
     }
 
 
-    //购物时获取可用的优惠券,仅当现价超过优惠券起用price时才显示
+    //购物时显示可用的优惠券,仅当现价超过优惠券起用价时才显示
     @RequestMapping("/findCouponWhileShopping")
     public Result findCouponWhileShopping(Integer uid, Integer merchantId,Double price)
     {

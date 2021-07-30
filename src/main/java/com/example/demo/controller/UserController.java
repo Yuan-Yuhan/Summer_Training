@@ -1,22 +1,27 @@
 package com.example.demo.controller;
 
+import com.example.demo.enm.MsgId;
 import com.example.demo.entity.Result;
 import com.example.demo.entity.User;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
+import com.example.demo.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 /**
- * @author 赵思阳
- * @since 2021/7/13
+ * @author 袁宇涵
+ * @since 2021-07-23
  * @version 1.0
  */
+//用户
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    UserRepository userRepository;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello(@RequestParam(defaultValue = "李斯", required = false,value = "xingming") String nikename){
@@ -31,8 +36,8 @@ public class UserController {
      * @param phone,password
      * @return
      */
-    @RequestMapping ("/login")
-    public Result login(String phone, String password){
+    @GetMapping ("/login")
+    public Result login(@RequestParam("phone")String phone, @RequestParam("password")String password){
         return userService.login(phone,password);
     }
 
@@ -47,12 +52,21 @@ public class UserController {
     }
     /**
      * 用户更新 id必传
-     * @param user
+     * @param uid,gender,birthday,place
      * @return
      */
     @RequestMapping("/update")
-    public Result update(User user){
-        return userService.update(user);
+    public Result update(Integer uid,String gender,String birthday,String place){
+        return userService.update(uid,gender,birthday,place);
+    }
+    /**
+     * 修改密码 id,password必传
+     * @param uid,password
+     * @return
+     */
+    @RequestMapping("/changePassword")
+    public Result changePassword(Integer uid,String password){
+        return userService.changePassword(uid,password);
     }
 
     /**
@@ -61,21 +75,33 @@ public class UserController {
      * @return
      */
     @RequestMapping("/delete" )
-    public Result delete(int uid){
+    public Result delete(Integer uid){
         return userService.delete(uid);
     }
+
+    @RequestMapping("/findUserByUid")
+    public Result findUserByUid(Integer uid)
+    {
+        User user = userRepository.findByUid(uid);
+        if(user == null) //2,"用户不存在！"
+            return ResultUtils.error(MsgId.USER_NOT_EXIST);
+
+        return ResultUtils.success(user);
+    }
     /**
-     * 更新用户头像
-     * @param uid，avatar
+     * 查找用户头像图片地址
+     * @param uid
      * @return
      */
-    @RequestMapping("/avatar")
-    public Result updateAvatar(int uid,String avatar){
-        return userService.updateAvatar(uid,avatar);
+    public Result findAvatar(Integer uid){
+        return ResultUtils.success(userRepository.findAvatarByUid(uid));
     }
-
-
-
-
+    /**
+     * uid查找用户
+     * @param uid
+     * @return
+     */
+    @RequestMapping("/findByUid")
+    public Result findByUid(Integer uid){return ResultUtils.success(userRepository.findByUid(uid));}
 
 }

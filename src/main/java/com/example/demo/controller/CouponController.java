@@ -2,10 +2,14 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Coupon;
 import com.example.demo.entity.Result;
+import com.example.demo.repository.CouponRepository;
 import com.example.demo.service.CouponService;
+import com.example.demo.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author 袁宇涵
@@ -13,12 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0
  */
 
+//优惠券
 @RestController
 @RequestMapping("/coupon")
 public class CouponController
 {
     @Autowired
     CouponService couponService;
+    @Autowired
+    CouponRepository couponRepository;
 
     @RequestMapping("/addCoupon")
     public Result addCoupon(Coupon coupon)
@@ -36,5 +43,12 @@ public class CouponController
     public Result deleteCoupon(Integer couponId)
     {
         return couponService.deleteCoupon(couponId);
+    }
+
+    @RequestMapping("/getAll")
+    public Result getAll(Integer merchantId)
+    {
+        List<Coupon> couponList = couponRepository.findAllByMerchantId(merchantId);
+        return ResultUtils.success(couponList);
     }
 }
